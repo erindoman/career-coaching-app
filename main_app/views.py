@@ -14,7 +14,7 @@ def about(request):
 
 @login_required
 def clients_index(request):
-    clients = Client.objects.all()
+    clients = Client.objects.filter(user=request.user)
     return render(request, 'clients/index.html', { 'clients': clients })
 
 @login_required
