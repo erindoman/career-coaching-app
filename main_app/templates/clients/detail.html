@@ -10,6 +10,11 @@
                 <p>Name: {{ client.name }}</p>
                 <p>Title: {{ client.title }}</p>
 
+                <div class="card-action">
+                    <a href="{% url 'clients_update' client.id %}">Edit</a>
+                    <a href="{% url 'clients_delete' client.id %}">Delete</a>
+                  </div>
+
             </div>
         </div>
     </div>
