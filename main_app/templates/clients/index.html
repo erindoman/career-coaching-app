@@ -5,9 +5,11 @@
 
 {% for client in clients %}
   <div class="card">
+    <a href="{% url 'detail' client.id %}">
     <div class="card-content">
       <span class="card-title">{{ client.name }}</span>
     </div>
+  </a>
   </div>
 {% endfor %}
 
