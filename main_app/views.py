@@ -24,7 +24,11 @@ def clients_detail(request, client_id):
 
 class ClientCreate(LoginRequiredMixin, CreateView):
     model = Client 
-    fields = '__all__'
+    fields = ['name', 'title']
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class ClientUpdate(LoginRequiredMixin, UpdateView):
     model = Client
