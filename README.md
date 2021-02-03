@@ -1,6 +1,7 @@
 # Career Coaching App
 
 [ABOUT]
+
 [LINK]
 
 ----------------------------------------
@@ -14,9 +15,13 @@
 ### Technologies Used
 
 *Python
+
 *Django
+
 *PostgreSQL
+
 *CSS
+
 *HTML
 
 ----------------------------------------
