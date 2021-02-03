@@ -14,7 +14,8 @@ def about(request):
 
 @login_required
 def clients_index(request):
-    clients = Client.objects.filter(user=request.user)
+    # clients = Client.objects.filter(user=request.user)
+    clients = Client.objects.all()
     return render(request, 'clients/index.html', { 'clients': clients })
 
 @login_required
@@ -24,7 +25,7 @@ def clients_detail(request, client_id):
 
 class ClientCreate(LoginRequiredMixin, CreateView):
     model = Client 
-    fields = ['name', 'title']
+    fields = '__all__'
 
 def signup(request):
   error_message = ''
