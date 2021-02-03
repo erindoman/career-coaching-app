@@ -22,7 +22,7 @@ def clients_detail(request, client_id):
     client = Client.objects.get(id=client_id)
     return render(request, 'clients/detail.html', { 'client': client })
 
-class ClientCreate(CreateView):
+class ClientCreate(LoginRequiredMixin, CreateView):
     model = Client 
     fields = ['name', 'title']
 
