@@ -28,7 +28,7 @@
 
 ### Getting Started
 
-[PLACEHOLDDER]
+[PLACEHOLDER]
 
 ----------------------------------------
 
