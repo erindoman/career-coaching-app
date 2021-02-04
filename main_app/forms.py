@@ -4,4 +4,4 @@ from .models import Application
 class ApplicationForm(ModelForm):
     class Meta:
         model = Application
-        fields = '__all__'
+        fields = ['title', 'dateApplied', 'company', 'link', 'status']

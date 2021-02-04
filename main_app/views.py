@@ -27,8 +27,11 @@ def clients_detail(request, client_id):
 @login_required
 def add_application(request, client_id):
     form = ApplicationForm(request.POST)
-    # if form.is_valid():
-    #     new_application = 
+    if form.is_valid():
+        new_application = form.save(commit=False)
+        new_application.client_id = client_id
+        new_application.save()
+    return redirect('detail', client_id=client_id)
 
 class ClientCreate(LoginRequiredMixin, CreateView):
     model = Client 
