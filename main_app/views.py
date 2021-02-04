@@ -35,25 +35,26 @@ def add_application(request, client_id):
         new_application.save()
     return redirect('detail', client_id=client_id)
 
+@login_required
 def assoc_skill(request, client_id, skill_id):
     Client.objects.get(id=client_id).skills.add(skill_id)
     return redirect('detail', client_id=client_id)
 
-class SkillList(ListView):
+class SkillList(LoginRequiredMixin, ListView):
     model = Skill
 
-class SkillDetail(DetailView):
+class SkillDetail(LoginRequiredMixin, DetailView):
     model = Skill
 
-class SkillCreate(CreateView):
+class SkillCreate(LoginRequiredMixin, CreateView):
     model = Skill
-    fields = ['name', 'experience']
+    fields = ['name']
 
-class SkillUpdate(UpdateView):
+class SkillUpdate(LoginRequiredMixin, UpdateView):
     model = Skill
-    fields = ['name', 'experience']
+    fields = ['name']
 
-class SkillDelete(DeleteView):
+class SkillDelete(LoginRequiredMixin, DeleteView):
     model = Skill
     success_url = '/skills/'
 
