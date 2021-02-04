@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Client
+from django.views.generic import ListView, DetailView
+from .models import Client, Skill
 from .forms import ApplicationForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -32,6 +33,25 @@ def add_application(request, client_id):
         new_application.client_id = client_id
         new_application.save()
     return redirect('detail', client_id=client_id)
+
+
+class SkillList(ListView):
+    model = Skill
+
+class SkillDetail(DetailView):
+    model = Skill
+
+class SkillCreate(CreateView):
+    model = Skill
+    fields = '__all__'
+
+class SkillUpdate(UpdateView):
+    model = Skill
+    fields = '__all__'
+
+class SkillDelete(DeleteView):
+    model = Skill
+    success_url = '/skills/'
 
 class ClientCreate(LoginRequiredMixin, CreateView):
     model = Client 

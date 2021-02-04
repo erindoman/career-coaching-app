@@ -22,6 +22,8 @@
         <ul class="right">
           <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
+          <li><a href="{% url 'skills_create' %}">Add a Skill</a></li>
+          <li><a href="{%  url 'skills_index' %}">View Skills</a></li>
           <li><a href="{% url 'client_create' %}">Add a Client</a></li>
           <li><a href="/clients">View My Clients</a></li>
           <li><a href="{% url 'logout' %}">Log Out</a></li>

@@ -9,10 +9,15 @@ STATUS = (
     ('I', 'Interviewing')
 )
 
+class Skill(models.Model):
+    name = models.CharField(max_length=20)
+    experience = models.IntegerField
+
 class Client(models.Model):
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    skills = models.ManyToManyField(Skill)
 
     def __str__(self):
         return self.name
@@ -39,4 +44,3 @@ class Application(models.Model):
 
     class Meta:
         ordering = ['-dateApplied']
-
