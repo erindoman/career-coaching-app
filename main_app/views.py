@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Client
+from .forms import ApplicationForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -20,7 +21,14 @@ def clients_index(request):
 @login_required
 def clients_detail(request, client_id):
     client = Client.objects.get(id=client_id)
-    return render(request, 'clients/detail.html', { 'client': client })
+    application_form = ApplicationForm()
+    return render(request, 'clients/detail.html', { 'client': client, 'application_form': application_form })
+
+@login_required
+def add_application(request, client_id):
+    form = ApplicationForm(request.POST)
+    # if form.is_valid():
+    #     new_application = 
 
 class ClientCreate(LoginRequiredMixin, CreateView):
     model = Client 
