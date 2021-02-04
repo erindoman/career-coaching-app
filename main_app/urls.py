@@ -15,5 +15,6 @@ urlpatterns = [
     path('skills/create/', views.SkillCreate.as_view(), name='skills_create'),
     path('skills/<int:pk>/update', views.SkillUpdate.as_view(), name='skills_update'),
     path('skills/<int:pk>/delete', views.SkillDelete.as_view(), name='skills_delete'),
+    path('clients/<int:client_id>/assoc_skill/<int:skill_id>/', views.assoc_skill, name='assoc_skill'),
     path('accounts/signup/', views.signup, name='signup'),
 ]

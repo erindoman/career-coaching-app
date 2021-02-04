@@ -22,8 +22,9 @@ def clients_index(request):
 @login_required
 def clients_detail(request, client_id):
     client = Client.objects.get(id=client_id)
+    skills_client_doesnt_have = Skill.objects.exclude(id__in = client.skills.all().values_list('id'))
     application_form = ApplicationForm()
-    return render(request, 'clients/detail.html', { 'client': client, 'application_form': application_form })
+    return render(request, 'clients/detail.html', { 'client': client, 'application_form': application_form, 'skills': skills_client_doesnt_have })
 
 @login_required
 def add_application(request, client_id):
@@ -34,6 +35,9 @@ def add_application(request, client_id):
         new_application.save()
     return redirect('detail', client_id=client_id)
 
+def assoc_skill(request, client_id, skill_id):
+    Client.objects.get(id=client_id).skills.add(skill_id)
+    return redirect('detail', client_id=client_id)
 
 class SkillList(ListView):
     model = Skill

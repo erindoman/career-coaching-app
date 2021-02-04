@@ -61,6 +61,28 @@
       <h5>No Skills Added</h5>
     {% endif %}
   </div>
+  <div class="col s6">
+    <h3>Add Skills</h3>
+    {% if skills.count %}
+      {% for skill in skills.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              {{ skill.name }}
+            </span>
+          </div>
+          <div class="card-action">
+            <form action="{% url 'assoc_skill' client.id skill.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn">Add</button>
+            </form>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h5>Wow! {{client.name}} sure is smart! They already have all skills available.</h5>
+    {% endif %}
+  </div>
   </div>
 
 <script>
