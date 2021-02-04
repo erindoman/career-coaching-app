@@ -11,7 +11,13 @@ STATUS = (
 
 class Skill(models.Model):
     name = models.CharField(max_length=20)
-    experience = models.IntegerField
+    experience = models.IntegerField()
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('skills_detail', kwargs={'pk': self.id})
 
 class Client(models.Model):
     name = models.CharField(max_length=100)
@@ -24,7 +30,6 @@ class Client(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'client_id': self.id})
-
 
 class Application(models.Model):
     title = models.CharField(max_length=500)

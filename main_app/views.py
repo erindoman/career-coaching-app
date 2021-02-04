@@ -43,11 +43,11 @@ class SkillDetail(DetailView):
 
 class SkillCreate(CreateView):
     model = Skill
-    fields = '__all__'
+    fields = ['name', 'experience']
 
 class SkillUpdate(UpdateView):
     model = Skill
-    fields = '__all__'
+    fields = ['name', 'experience']
 
 class SkillDelete(DeleteView):
     model = Skill
