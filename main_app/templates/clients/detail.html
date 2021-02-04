@@ -18,6 +18,24 @@
             </div>
         </div>
     </div>
+    <div class="col s6">
+        <table class="striped">
+          <thead>
+            <tr><th>Status</th><th>Title</th><th>Company</th><th>Date Applied</th><th>Link</th></tr>
+          </thead>
+          <tbody>
+            {% for application in client.application_set.all %}
+              <tr>
+                <td>{{application.get_status_display}}</td>
+                <td>{{application.title}}</td>
+                <td>{{application.company}}</td>
+                <td>{{application.dateApplied}}</td>
+                <td>{{application.link}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
 </div>
 
 {% endblock %}
