@@ -4,17 +4,25 @@
 <h1>Client Details</h1>
 
 <div class="row">
-    <div class="col s6">
-        <div class="card">
-            <div class="card-content">
-                <p>Name: {{ client.name }}</p>
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">{{ client.name }}</span>
                 <p>Title: {{ client.title }}</p>
+                {% if client.skills.count %}
+      {% for skill in client.skills.all %}
+        <a class="waves-effect waves-light btn">
+             {{ skill.name }}
+        </a>
+      {% endfor %}
+    {% else %}
+      <h5>No Skills Added</h5>
+    {% endif %}
 
                 <div class="card-action">
                     <a href="{% url 'clients_update' client.id %}">Edit</a>
                     <a href="{% url 'clients_delete' client.id %}">Delete</a>
                   </div>
-
             </div>
         </div>
     </div>
@@ -44,25 +52,20 @@
       
 </div>
 <hr>
+<h4>{{ client.name }}'s Skills</h4>
 <div class="row">
   <div class="col s6">
-    <h3>{{ client.name }}'s Skills</h3>
     {% if client.skills.count %}
       {% for skill in client.skills.all %}
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title">
+        <a class="waves-effect waves-light btn">
              {{ skill.name }}
-            </span>
-          </div>
-        </div>
+        </a>
       {% endfor %}
     {% else %}
       <h5>No Skills Added</h5>
     {% endif %}
   </div>
   <div class="col s6">
-    <h3>Add Skills</h3>
     {% if skills.count %}
       {% for skill in skills.all %}
         <div class="card">

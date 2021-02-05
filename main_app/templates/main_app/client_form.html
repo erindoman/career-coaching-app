@@ -3,9 +3,9 @@
 {% block content %}
 
     {% if object %}
-        <h1>Edit {{ object.name }}</h1>
+        <h3>Edit {{ object.name }}</h3>
     {% else %}
-        <h1>Add Client</h1>
+        <h3>Add Client</h3>
     {% endif %}
 
     <form action="" method="post">
@@ -15,6 +15,9 @@
         </table>
         <input type='submit' value='Submit' class='btn'>
 
+
+
+        
     </form>
 
 {% endblock %}

@@ -68,7 +68,7 @@ class ClientCreate(LoginRequiredMixin, CreateView):
 
 class ClientUpdate(LoginRequiredMixin, UpdateView):
     model = Client
-    fields = '__all__'
+    fields = ['name', 'title']
 
 class ClientDelete(LoginRequiredMixin, DeleteView):
     model = Client
