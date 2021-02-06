@@ -2,6 +2,9 @@
 {% block content %}
 
 <h3>My Clients</h3>
+<a href="{% url 'client_create' %}">Add a Client</a>
+
+<hr />
 
 {% for client in clients %}
   <div class="card">

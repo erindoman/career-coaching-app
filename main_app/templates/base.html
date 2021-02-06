@@ -16,16 +16,14 @@
 <body>
   <header class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper teal darken-3">
+      <div class="nav-wrapper light-blue darken-1">
         <ul>
-          <li><a href="/about" class="left brand-logo">&nbsp;Career Coach App&nbsp;</a></li>
+          <li><a href="/about" class="right brand-logo hide-on-med-and-down">&nbsp;Coach.&nbsp;</a></li>
         </ul>
-        <ul class="right">
+        <ul id="nav-mobile" class="left">
           <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
-          <li><a href="{% url 'skills_create' %}">Add a Skill</a></li>
           <li><a href="{%  url 'skills_index' %}">View Skills</a></li>
-          <li><a href="{% url 'client_create' %}">Add a Client</a></li>
           <li><a href="/clients">View My Clients</a></li>
           <li><a href="{% url 'logout' %}">Log Out</a></li>
           {% else %}
