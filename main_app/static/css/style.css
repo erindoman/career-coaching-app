@@ -25,12 +25,19 @@ a {
 
 .btn {
   margin: 5px;
+  color: white;
 }
 
 .card {
-  margin: 50px 0 0 0;
+  margin: 50px 0 50px 0;
 }
 
 form {
   display: inline-block;
 }
+
+.job-form {
+  background-color: white;
+  display: block;
+}
+
