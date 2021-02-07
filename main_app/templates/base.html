@@ -18,13 +18,13 @@
     <nav>
       <div class="nav-wrapper light-blue darken-4">
         <ul>
-          <li><a href="/about" class="right brand-logo hide-on-med-and-down">&nbsp;Coach.&nbsp;</a></li>
+          <li><a href="/" class="right brand-logo hide-on-med-and-down">&nbsp;Coach.&nbsp;</a></li>
         </ul>
         <ul id="nav-mobile" class="left">
           <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
-          <li><a href="{%  url 'skills_index' %}">View Skills</a></li>
-          <li><a href="/clients">View My Clients</a></li>
+          <li><a href="{%  url 'skills_index' %}">Skills</a></li>
+          <li><a href="/clients">My Clients</a></li>
           <li><a href="{% url 'logout' %}">Log Out</a></li>
           {% else %}
           <li><a href="{% url 'signup' %}">Sign Up</a></li>
