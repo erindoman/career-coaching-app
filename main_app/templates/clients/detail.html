@@ -23,22 +23,38 @@
   </div>
 
 </div>
-<!-- Insert photo markup below this comment -->
-{% for photo in client.photo_set.all %}
-  <a class="responsive-img card-panel" href="{{photo.url}}">Resume</a>
-{% empty %}
-  <div class="card-panel teal-text center-align">No Resume Uploaded</div>
-{% endfor %}
 
-<!-- new code below -->
-<form action="{% url 'add_photo' client.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
-    {% csrf_token %}
-    <input type="file" name="photo-file">
-    <br><br>
-    <input type="submit" class="btn light-blue darken-4" value="Upload Photo">
-</form>
 
-  <hr />
+<div class="left-align">
+  <div class="col">
+    <div class="col s12 m6">
+          <div class="card light-blue darken-4">
+            <div class="card-content white-text">
+              <span class="card-title">Resume</span>
+              <br>
+              <div class="center-align">
+              {% for photo in client.photo_set.all %}
+              <a class="waves-effect waves-light btn light-blue darken-1" href="{{photo.url}}">RESUME</a>
+              {% empty %}
+              {% endfor %}
+            </div>
+
+              <form action="{% url 'add_photo' client.id %}" enctype="multipart/form-data" method="POST">
+              {% csrf_token %}
+              <input type="file" name="photo-file">
+              <br>
+              <br>
+              
+              <input type="submit" class="btn light-blue darken-1 upload-res" value="Upload Photo">
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+</br>
+<hr />
 
   <div class="col">
     <div class="col s12 m6">
