@@ -22,6 +22,22 @@
     </div>
   </div>
 
+</div>
+<!-- Insert photo markup below this comment -->
+{% for photo in client.photo_set.all %}
+  <a class="responsive-img card-panel" href="{{photo.url}}">Resume</a>
+{% empty %}
+  <div class="card-panel teal-text center-align">No Resume Uploaded</div>
+{% endfor %}
+
+<!-- new code below -->
+<form action="{% url 'add_photo' client.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+    {% csrf_token %}
+    <input type="file" name="photo-file">
+    <br><br>
+    <input type="submit" class="btn" value="Upload Photo">
+</form>
+
   <hr />
 
   <div class="col">

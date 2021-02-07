@@ -48,3 +48,10 @@ class Application(models.Model):
 
     class Meta:
         ordering = ['-dateApplied']
+
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Photo for client_id: {self.client_id} @{self.url}"
