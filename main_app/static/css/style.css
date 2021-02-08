@@ -41,3 +41,14 @@ form {
   display: block;
 }
 
+.datepicker-day-button {
+  background-color: #01579b;
+}
+
+.datepicker-date-display {
+  background-color: #01579b;
+}
+
+.btn-flat {
+  color: #01579b;
+}

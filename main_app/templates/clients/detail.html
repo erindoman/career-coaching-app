@@ -1,5 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
+<h3>{{client.name}}'s Profile</h3>
+
 <div class="col">
   <div class="col s12 m6">
     <div class="card light-blue darken-4">
@@ -55,6 +57,8 @@
 
 </br>
 <hr />
+
+<h3>Edit</h3>
 
   <div class="col">
     <div class="col s12 m6">
@@ -121,10 +125,10 @@
 
   <hr />
 
-  <script>
+  <script class="datepicker">
     var dateEl = document.getElementById("id_dateApplied");
     M.Datepicker.init(dateEl, {
-      format: "yyyy-mm-dd",
+      format: "mm-dd-yyyy",
       defaultDate: new Date(),
       setDefaultDate: true,
       autoClose: true,
