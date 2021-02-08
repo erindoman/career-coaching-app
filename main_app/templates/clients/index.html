@@ -10,10 +10,11 @@
   <div class="card light-blue darken-4">
     <a href="{% url 'detail' client.id %}">
       <div class="card-content white-text">
-      <span class="card-title">{{ client.name }}</span>
-    </div>
-  </a>
+        <span class="card-title">{{ client.name }}</span>
+      </div>
+    </a>
   </div>
+
 {% endfor %}
 
 {% endblock %}

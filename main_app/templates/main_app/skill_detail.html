@@ -4,12 +4,14 @@
 <div class="left-align">
   <div class="col">
     <div class="col s12 m6">
-          <div class="card light-blue darken-4">
-            <div class="card-content white-text">
-              <span class="card-title">{{ skill.name }}</span>
-      <div class="card-action">
-        <a href="{% url 'skills_update' skill.id %}">Edit</a>
-        <a href="{% url 'skills_delete' skill.id %}">Delete</a>
+      <div class="card light-blue darken-4">
+        <div class="card-content white-text">
+          <span class="card-title">{{ skill.name }}</span>
+          <div class="card-action">
+            <a href="{% url 'skills_update' skill.id %}">Edit</a>
+            <a href="{% url 'skills_delete' skill.id %}">Delete</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

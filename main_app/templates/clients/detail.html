@@ -22,7 +22,6 @@
       </div>
     </div>
   </div>
-
 </div>
 
 
@@ -38,7 +37,7 @@
               <a class="waves-effect waves-light btn light-blue darken-1" href="{{photo.url}}">RESUME</a>
               {% empty %}
               {% endfor %}
-            </div>
+              </div>
 
               <form action="{% url 'add_photo' client.id %}" enctype="multipart/form-data" method="POST">
               {% csrf_token %}
