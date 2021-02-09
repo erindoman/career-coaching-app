@@ -1,8 +1,8 @@
-# Career Coaching App
+# Coach.
 
 Coach. is an app designed to help Career Coaches keep track of their client base using a simple user interface. Career Coaches can use Coach. to track their clients and easily add new clients, track which skills a client has, update the universal skill list, and even save a resume or other documents to a client's profile.
 
-Career Coaches can also manually add in jobs that their clients have applied to, noting the date of application, the job title and company, and a link to the company site.
+Career Coaches can also manually add in jobs that their clients have applied to, noting the date of application, the job title and company, and a link to the company site or job posting.
 
 To get started, click on the "My Clients" tab in the navigation bar and add your client. Once a client has been added, you are free to update their skills and upload a resume, as well as begin listing their job applications.
 
