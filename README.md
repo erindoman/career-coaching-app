@@ -6,7 +6,7 @@ Career Coaches can also manually add in jobs that their clients have applied to,
 
 To get started, click on the "My Clients" tab in the navigation bar and add your client. Once a client has been added, you are free to update their skills and upload a resume, as well as begin listing their job applications.
 
-[Coach.]()
+[Coach.](https://careercoach.herokuapp.com/)
 
 [Trello](https://trello.com/b/gYopotv7/career-coach-app)
 
@@ -49,7 +49,7 @@ To get started, click on the "My Clients" tab in the navigation bar and add your
 
 ### Getting Started
 
-To get started, click [here](). Create an account and begin adding clients and skills to your user profile.
+To get started, click [here](https://careercoach.herokuapp.com/). Create an account and begin adding clients and skills to your user profile.
 
 ----------------------------------------
 
